@@ -5,7 +5,7 @@
 
 // 配置信息
 const CONFIG = {
-    PROXY_API_URL: 'http://localhost:3000/api/convert',
+    PROXY_API_URL: 'https://anime-anything-github-io.vercel.app/api/convert',
     MAX_FILE_SIZE: 5 * 1024 * 1024, // 5MB
     SUPPORTED_FORMATS: ['image/jpeg', 'image/png', 'image/webp']
 };
@@ -680,7 +680,7 @@ function validateInputs() {
  */
 async function convertImage(imageUrl, prompt, functionType, outputNum) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 180000); // 3分钟超时，适合多图片生成
+    const timeoutId = setTimeout(() => controller.abort(), 120000); // 2分钟超时
 
     try {
         console.log('开始调用代理 API...', { imageUrl, prompt, functionType, outputNum });

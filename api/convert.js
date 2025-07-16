@@ -6,11 +6,11 @@
  * 2. 绝对不要在代码中硬编码 API Key
  */
 
-import fetch from 'node-fetch';
+// 在浏览器环境中，fetch 是内置的，不需要导入
 
 // API 配置
 const DASHSCOPE_BASE_URL = 'https://dashscope.aliyuncs.com/api/v1';
-const MAX_POLLING_ATTEMPTS = 40; // 最大轮询次数 (约2分钟，适合多图片生成)
+const MAX_POLLING_ATTEMPTS = 20; // 最大轮询次数 (约1分钟)
 const POLLING_INTERVAL = 3000; // 轮询间隔 (3秒)
 
 /**
